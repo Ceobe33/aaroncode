@@ -1,4 +1,6 @@
 [Pp]ublic/
 node_modules/
+
 tags
+*.log
 db\.json
