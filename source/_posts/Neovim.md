@@ -2,8 +2,7 @@
 title: Neovim note
 date: "2023-05-02 14:00"
 cover: Vim-m.png
-tags:
-    - Note
+tags: [Note, Neovim, Tutorial]
 description: vim/neovim note
 ---
 

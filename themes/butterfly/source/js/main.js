@@ -494,6 +494,9 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollToTop: () => { // Back to top
       btf.scrollToDest(0, 500)
     },
+    scrollToBottom: () => { // Go to bottom
+      btf.scrollToDest(99999, 500)
+    },
     hideAsideBtn: () => { // Hide aside
       const $htmlDom = document.documentElement.classList
       $htmlDom.contains('hide-aside')
@@ -513,6 +516,9 @@ document.addEventListener('DOMContentLoaded', function () {
     switch ($target.id) {
       case 'go-up':
         rightSideFn.scrollToTop()
+        break
+      case 'go-down':
+        rightSideFn.scrollToBottom()
         break
       case 'rightside_config':
         rightSideFn.showOrHideBtn($target)

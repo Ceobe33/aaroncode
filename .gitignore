@@ -1,3 +1,4 @@
 [Pp]ublic/
-
+node_modules/
+tags
 db\.json

@@ -121,4 +121,5 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ""
+  type: "git"
+  repo: "git@github.com:Ceobe33/aarondump.github.io.git"
