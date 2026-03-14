@@ -1,3 +1,6 @@
+.deploy_git/
+
+
 [Pp]ublic/
 node_modules/
 

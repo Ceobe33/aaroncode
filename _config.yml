@@ -14,7 +14,7 @@ email: youareaaron0@gmail.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://aaroncode.top/
+url: https://ceobe33.github.io/project
 root: /
 # 如果末尾没有 ‘/’ 就会有点击博客文章变成下载的bug
 permalink: :categories/:year/:month/:day/:title:output_ext/
@@ -109,8 +109,8 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
+include: []
+exclude: []
 ignore:
 
 # Extensions
@@ -122,4 +122,4 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: "git"
-  repo: "git@github.com:Ceobe33/aarondump.github.io.git"
+  repo: "git@github.com:Ceobe33/Ceobe33.github.io.git"
