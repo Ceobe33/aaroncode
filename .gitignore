@@ -6,6 +6,7 @@ public/
 node_modules/
 verify/
 
+tags[.*]
 tags
 *.log
 db\.json
