@@ -2,6 +2,8 @@
 title: About Git
 date: "2022-10-01 17:41:08"
 cover: AboutGit.png
+permalink: s
+categories:
 tags:
     - Git
     - Note
@@ -19,7 +21,7 @@ description: Git operation && facing issue
 > `$ ssh -T git@github.com`
 Hi Coebe! You've successfully authenticated, -*but GitHub does not provide shell access**.
 
-solve:  
+solve:
   `$ git remote set-url origin git@github.com:Coebe/pragmadump.git`
 
 - `connection refused`
@@ -30,7 +32,7 @@ solve:
      check github ip connection:
      `ssh -T -p 443 git@140.82.114.36`
   - `Failed to connect to raw.githubusercontent.com port 443 after 2 ms: Connection refused`
-      fix:  
+      fix:
       1. add this config to host config file:`199.232.28.133 raw.githubusercontent.com`
   -   `fatal: unable to access 'https://github.com/EpicGames/UnrealEngine.git/': OpenSSL SSL_read: Connection was reset, errno 10054`
       1.  fix: `git config --global --add remote.origin.proxy ""`
@@ -49,7 +51,7 @@ solve:
 
 ### Timeout
 
-[Fixing git push/pull timing out](https://bengsfort.github.io/articles/fixing-git-push-pull-timeout/)  
+[Fixing git push/pull timing out](https://bengsfort.github.io/articles/fixing-git-push-pull-timeout/)
 
 - -*Issue:clone timeout**
   -`fatal: unable to access 'https://github.com/LunarVim/Neovim-from-scratch.git/': Failed to connect to github.com port 443 after 21057 ms: Timed out`*
@@ -58,8 +60,8 @@ solve:
     - add `000.000.000.000 github.com` append to `C:/Windows/System32/drivers/etc/hosts`
     - then complete
 - -*Issue:pull timeout**
-  -`$ git pull`  
-  `ssh: connect to host github.com port 22: Connection timed out`  
+  -`$ git pull`
+  `ssh: connect to host github.com port 22: Connection timed out`
   `fatal: Could not read from remote repository.`-
   - -*Fix:**
     - check permission when switch port
@@ -71,26 +73,26 @@ solve:
       `Hostname ssh.github.com`
       `Port 443`
 - -*Issue:push timeout**
-  -`$ git push`  
+  -`$ git push`
   `fatal: unable to access 'https://github.com/Coebe/aaroncode.git/': Failed to connect to github.com port 443 after 21109 ms: Timed out`-
   - -*Fix:**
     - reset/add remote repo
-    `$ git remote add origin https://github.com/username.git/`  
-    other cmd  
+    `$ git remote add origin https://github.com/username.git/`
+    other cmd
     remove: `$ git remote remove <name>`
-    - set push upstream  
+    - set push upstream
     `$ git push --set-upstream origin main`
 - -*Issue:** *`fatal: unable to access 'https://github.com/Coebe/aaroncode.git/': Failed to connect to 192.168.10.120 port 7890 after 21039 ms: Timed out`*
   - -*Fix:**
 - -*Issue:**
-  -`$ git clone`  
+  -`$ git clone`
   `fatal: unable to access 'https://github.com/ThePrimeagen/vim-be-good.git/': Failed to connect to 192.168.10.120 port 7890 after 21080 ms: Timed out`-
   - -*Fix:**
-    - proxy problem clear that all be fine  
-     `git config --global --unset http.xxx`  
+    - proxy problem clear that all be fine
+     `git config --global --unset http.xxx`
     - if wanna set proxy:
      `git config --global http.proxy http://xxx/`
-      if needs account & password -*don't know meaning**  
+      if needs account & password -*don't know meaning**
       `git config --global http.proxy http://user:pwd@ipaddress:port`
 
 ### Secure & Authentication
@@ -107,7 +109,7 @@ solve:
 
 
 
-![Submodule](https://s2.loli.net/2022/11/02/iRJrgEc4mDWOPUT.png)this image mean has `.git` file in child directory, 然后GitHub就会把这个文件夹视为一个子系统模块,从而不能正常更新Git  
+![Submodule](https://s2.loli.net/2022/11/02/iRJrgEc4mDWOPUT.png)this image mean has `.git` file in child directory, 然后GitHub就会把这个文件夹视为一个子系统模块,从而不能正常更新Git
 
 solve step:
 
