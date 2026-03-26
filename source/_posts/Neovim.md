@@ -19,42 +19,40 @@ everything be required which inside `lua/` directory
 
 1. [install windows virtual Linux](https://learn.microsoft.com/en-us/windows/wsl/install) then
 2. install nvim on Ubuntu [3 Ways to install NeoVim on Ubuntu 22.04 or 20.04](https://linux.how2shout.com/3-ways-to-install-neovim-on-ubuntu-22-04-or-20-04)
-  - official[link](https://github.com/neovim/neovim/wiki/Building-Neovim)
-    1. install requirements
-      `sudo apt-get install ninja-build gettext cmake unzip curl`
-  - maybe have some issue about Hyper-V
-    1. [win10](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)&#x20;
-    2. [win11](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-enabling-hyper-v-for-use-on-windows-11/ba-p/3745905)
-        1. you may need to learn [配置和管理 Hyper-V](https://learn.microsoft.com/zh-cn/training/modules/configure-manage-hyper-v/?WT.mc_id=academic-89565-abartolo)
-    maybe have issue about `sudo dpkg -i nvim-linux64.deb` ==though it is not same step(it's another way to install Neovim)==
-        1.  \[Try] [How to Install Python Pip on Ubuntu 20.04](https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/#:\~:text=To%20install%20pip%20for%20Python%203%20on%20%3Cu%3EUbuntu%3C%2Fu%3E,verify%20the%20installation%20by%20checking%20the%20pip%20version%3A)
-  - install latest nvim
-    1. download appimage [nvim devolopment](https://github.com/neovim/neovim/releases/nightly)
-    2. first of all, try to run this file
-        1. install requirement(on Ubuntu >= 22.04)  \
-            `sudo add-apt-repository universe`  \
-            `sudo apt install libfuse2`
-        2. `sudo chmod u+x nvim.appimage`
-        3. `./nvim.appimage`
-    3. move `nvim.appimage` to `nvim/`
-        - `mv nvim.appimage ./nvim`
-    4. change nvim directory to execute mode
-        - `sudo chmod +x nvim`
-    5. i don't know what's meaning of this step
-        - `sudo chown root:root nvim`
-    6. idk 2
-        - `sudo mv nvim /usr/bin`
-  - install from source [toturial](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites)
-    1. clone repo `git clone https://github.com/neovim/neovim`
-    - ==Issues==  
-      1. `OpenSSL: error:0A00010B:SSL routines::wrong version number` <br>`Unable to establish SSL connection.`
+
+- official[link](https://github.com/neovim/neovim/wiki/Building-Neovim)
+  1. install requirements
+     `sudo apt-get install ninja-build gettext cmake unzip curl`
+- maybe have some issue about Hyper-V
+  1. [win10](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)&#x20;
+  2. [win11](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-enabling-hyper-v-for-use-on-windows-11/ba-p/3745905) 1. you may need to learn [配置和管理 Hyper-V](https://learn.microsoft.com/zh-cn/training/modules/configure-manage-hyper-v/?WT.mc_id=academic-89565-abartolo)
+     maybe have issue about `sudo dpkg -i nvim-linux64.deb` ==though it is not same step(it's another way to install Neovim)== 1. \[Try] [How to Install Python Pip on Ubuntu 20.04](https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/#:~:text=To%20install%20pip%20for%20Python%203%20on%20%3Cu%3EUbuntu%3C%2Fu%3E,verify%20the%20installation%20by%20checking%20the%20pip%20version%3A)
+- install latest nvim
+  1. download appimage [nvim devolopment](https://github.com/neovim/neovim/releases/nightly)
+  2. first of all, try to run this file
+     1. install requirement(on Ubuntu >= 22.04) \
+        `sudo add-apt-repository universe` \
+        `sudo apt install libfuse2`
+     2. `sudo chmod u+x nvim.appimage`
+     3. `./nvim.appimage`
+  3. move `nvim.appimage` to `nvim/`
+     - `mv nvim.appimage ./nvim`
+  4. change nvim directory to execute mode
+     - `sudo chmod +x nvim`
+  5. i don't know what's meaning of this step
+     - `sudo chown root:root nvim`
+  6. idk 2
+     - `sudo mv nvim /usr/bin`
+- install from source [toturial](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites)
+  1. clone repo `git clone https://github.com/neovim/neovim`
+  - ==Issues==
+    1. `OpenSSL: error:0A00010B:SSL routines::wrong version number` <br>`Unable to establish SSL connection.`
 
 3. configuration step
-  1. install packer
+1. install packer
 
 - Ubuntu command
-
-  1. `mv <file name> <new name>`   modified file name&#x20;
+  1. `mv <file name> <new name>` modified file name&#x20;
 
 - [download files on linux](https://linux.cn/article-12752-1.html)
   - use appimage file [youtube link](https://youtu.be/rHxgQ8c6H7k)
@@ -68,14 +66,13 @@ everything be required which inside `lua/` directory
 ### about ubuntu
 
 - wsl install
-
   1. [如何在 Windows 上用 WSL 2 快速体验丝般顺滑的 Linux](https://www.51cto.com/article/720323.html)
-
   - error:
     1. couldn't install ubuntu subsystem on window
-        1. fix: 控制面板-卸载程序-启用或关闭Windows功能， 两个功能~~开关~~重启一下
-           - [ ] 适用于Linux的Windows子系统
-           - [ ] 虚拟机平台
+       1. fix: 控制面板-卸载程序-启用或关闭Windows功能， 两个功能~~开关~~重启一下
+          - [ ] 适用于Linux的Windows子系统
+          - [ ] 虚拟机平台
+
 - input command didn't display 终端命令不显示
   - 关闭输入回显 `stty -echo`
   - 打开输入回显 `stty echo`
@@ -128,22 +125,22 @@ everything be required which inside `lua/` directory
 
 - **Error**
   1. `job.lua:94: Killing git due to timeout!`
-    1. fix: `sudo apt update`
-  2. `couldn't find 'packer' identifier`
-    1. fix: exit nvim, re-enter
+  1. fix: `sudo apt update`
+  1. `couldn't find 'packer' identifier`
+  1. fix: exit nvim, re-enter
 - **Install**
-  1. -treesitter playground* install **failed**
-  2. -telescope* installed
-    - [ ] how to set exploring range
+  1. -treesitter playground\* install **failed**
+  2. -telescope\* installed
+  - [ ] how to set exploring range
   3.
 
 ### nvim issue
 
 - [x] DONE: need to **source** all of files over every jump nvim in time
-  - just follow [official tutorial](https://neovim.io/doc/user/starting.html#initialization:~:text=7.%20Load%20user%20config%20(execute%20Ex%20commands%20from%20files%2C%20environment%2C%20%E2%80%A6).)
-    >   Unix			    ~/.config/nvim/init.vim		    (or init.lua)
-	    Windows			    ~/AppData/Local/nvim/init.vim	(or init.lua)
-	    $XDG_CONFIG_HOME  	$XDG_CONFIG_HOME/nvim/init.vim	(or init.lua)
+  - just follow [official tutorial](<https://neovim.io/doc/user/starting.html#initialization:~:text=7.%20Load%20user%20config%20(execute%20Ex%20commands%20from%20files%2C%20environment%2C%20%E2%80%A6).>)
+    > Unix ~/.config/nvim/init.vim (or init.lua)
+    > Windows ~/AppData/Local/nvim/init.vim (or init.lua)
+    > $XDG_CONFIG_HOME $XDG_CONFIG_HOME/nvim/init.vim (or init.lua)
 
 ### git
 
@@ -168,7 +165,7 @@ everything be required which inside `lua/` directory
   - copy: `"+y`, paste(win): `Ctrl v`
 - **replace**
   1. slect statement
-  2. type command `s/src/des/g`  /g means global(over select)
+  2. type command `s/src/des/g` /g means global(over select)
 
 ### with files
 
@@ -191,7 +188,7 @@ everything be required which inside `lua/` directory
      2. `Shift-I` to insert comment symbol('--, //, $, #')
      3. complete then press `Esc` twice to confirm
   2. command $normal mode$
-     1. `:[start_line],[end_line]s/^/--`  eg:`:10,15/^/--`~(.lua)~
+     1. `:[start_line],[end_line]s/^/--` eg:`:10,15/^/--`~(.lua)~
   3. regular expresion
      1. `:g/\while/s/^/#`~(.py)~
 - **uncomment**
@@ -205,7 +202,7 @@ everything be required which inside `lua/` directory
 | ----------------------------------- | ---------------------------------------------------------------- |
 | `vim .`                             | open directory tree                                              |
 | **Move Cursor**                     | **====================**                                         |
-| `f`                                 | search -*f**orward                                               |
+| `f`                                 | search -\*f\*\*orward                                            |
 | `;`                                 | repeat forward last search                                       |
 | `,`                                 | repeat back last search                                          |
 | `_`, `$$`, `0`                      | move cursor to `line first character`, `line tail`, `line begin` |
@@ -250,4 +247,3 @@ let &t_EI = "\e[1 q"
 
 
 ```
-

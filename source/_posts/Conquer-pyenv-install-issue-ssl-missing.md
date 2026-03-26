@@ -19,10 +19,11 @@ try `pyenv install 3.10` again
 
 failure!
 
-### Clear appended path from windows:maybe the path ambitious: 
+### Clear appended path from windows:maybe the path ambitious:
 
 [How to remove the Win10's PATH from WSL](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
-``` bash
+
+```bash
 # add this two line below to /etc/wsl.conf
 [interop]
 appendWindowsPath = false

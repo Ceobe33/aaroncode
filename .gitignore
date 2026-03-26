@@ -1,8 +1,10 @@
 .deploy_git/
+.idea/
 
 
 [Pp]ublic/
 node_modules/
+verify/
 
 tags
 *.log
