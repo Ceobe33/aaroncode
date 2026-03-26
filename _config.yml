@@ -123,4 +123,4 @@ theme: butterfly
 deploy:
   type: "git"
   repo: "https://github.com/Ceobe33/Ceobe33.github.io"
-  branch: [main]
+  branch: gh-pages

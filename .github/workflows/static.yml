@@ -1,51 +1,50 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Pages
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
     branches:
-      - main # default branch
+      - main # 当推送到 main 分支时触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: recursive
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
+          submodules: false # 禁用子模块检查
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-          # Ref: https://github.com/actions/setup-node#supported-version-syntax
-          node-version: "20"
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
+          node-version: "24"
+
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: npm run build
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+
+      - name: Install Hexo Git Deployer
+        run: |
+          npm install hexo-deployer-git --save
+          npm install hexo-cli -g
+
+      - name: Clean and Generate Static Files
+        run: |
+          hexo clean
+          hexo generate
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        env:
+          GH_TOKEN: ${{ secrets.hexoaaroncode }}
+        run: |
+          cd public/
+          git init
+          git add -A
+          git commit -m "Create by workflows"
+          git remote add origin https://${{ secrets.hexoaaroncode }}@github.com/Ceobe33/aaroncode.git
+          git push origin HEAD:gh-pages -f
