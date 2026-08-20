@@ -243,7 +243,7 @@ post_edit:
   enable: true
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url: https://github.dev/Coebe/aaroncode/tree/main/source/
+  url: https://github.dev/Ceobe33/aaroncode/tree/main/source/
 
 # Related Articles
 related_post:
@@ -721,7 +721,7 @@ aside:
       enable: false
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/Coebe
+      link: https://github.com/Ceobe33
   card_announcement:
     enable: true
     content: It's my knowledge base, issue note
