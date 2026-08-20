@@ -39,12 +39,10 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Deploy to GitHub Pages
-        env:
-          GH_TOKEN: ${{ secrets.hexoaaroncode }}
         run: |
           cd public/
           git init
           git add -A
           git commit -m "Create by workflows"
-          git remote add origin https://${{ secrets.hexoaaroncode }}@github.com/Ceobe33/Ceobe33.github.io
+          git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/Ceobe33/Ceobe33.github.io
           git push origin master -f
