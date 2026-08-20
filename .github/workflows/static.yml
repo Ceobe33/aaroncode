@@ -3,7 +3,7 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - main # 当推送到 main 分支时触发
+      - master # 当推送到 <> 分支时触发
 
 jobs:
   build:
@@ -35,6 +35,7 @@ jobs:
 
       - name: Configure Git
         run: |
+          git config --global init.defaultBranch master
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
