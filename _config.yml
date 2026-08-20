@@ -124,3 +124,4 @@ deploy:
   type: "git"
   repo: "git@github.com:Ceobe33/Ceobe33.github.io.git"
   branch: master
+  token: $GITHUB_TOKEN
