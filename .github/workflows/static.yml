@@ -8,10 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read   # 当前仓库只需读取
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: false # 禁用子模块检查
 
@@ -42,13 +46,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # personal_token: ${{ secrets.HEXO }}    # 使用 PAT，不是 GITHUB_TOKEN
+          external_repository: https://github.com/Ceobe33/Ceobe33.github.io.git  # 目标仓库
+          github_token: ${{ secrets.HEXO }}
           publish_dir: ./public
           publish_branch: master
-        # run: |
-        #   cd public/
-        #   git init
-        #   git add -A
-        #   git commit -m "Create by workflows"
-        #   git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Ceobe33/Ceobe33.github.io
-        #   git push origin master -f
