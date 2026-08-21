@@ -40,10 +40,15 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Deploy to GitHub Pages
-        run: |
-          cd public/
-          git init
-          git add -A
-          git commit -m "Create by workflows"
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Ceobe33/Ceobe33.github.io
-          git push origin master -f
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: main
+        # run: |
+        #   cd public/
+        #   git init
+        #   git add -A
+        #   git commit -m "Create by workflows"
+        #   git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Ceobe33/Ceobe33.github.io
+        #   git push origin master -f
