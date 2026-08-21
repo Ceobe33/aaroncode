@@ -46,8 +46,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # personal_token: ${{ secrets.HEXO }}    # 使用 PAT，不是 GITHUB_TOKEN
+          personal_token: ${{ secrets.HEXO }}    # 使用 PAT，不是 GITHUB_TOKEN
           external_repository: https://github.com/Ceobe33/Ceobe33.github.io.git  # 目标仓库
-          github_token: ${{ secrets.HEXO }}
+          # github_token: ${{ secrets.HEXO }}
           publish_dir: ./public
           publish_branch: master
