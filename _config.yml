@@ -17,7 +17,7 @@ email: youareaaron0@gmail.com
 url: https://ceobe33.github.io/project
 root: /
 # 如果末尾没有 ‘/’ 就会有点击博客文章变成下载的bug
-permalink: :categories/:year/:month/:day/:title:output_ext/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -37,6 +37,10 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  # 原样复制，不经过渲染管线：否则插件会把 APlayer 的 <link>/<script> 注入到
+  # 文件开头 —— 整页会在 <!DOCTYPE html> 之前（浏览器退化为怪异模式），
+  # .js 则直接变成非法语法，模块导不出启动函数。
+  - spine-studio/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
