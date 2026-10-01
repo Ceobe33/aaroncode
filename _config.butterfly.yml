@@ -93,11 +93,130 @@ mathjax:
   enable: false
   per_page: false
 
-# KaTeX
+# KaTeX parser
+#
+# This configuration controls the Markdown -> KaTeX parsing
+# implemented by scripts/katex.js.
+#
+# Butterfly's own theme.katex configuration is separate.
 katex:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
   hide_scrollbar: true
+
+  # ------------------------------------------------------------
+  # Math delimiters
+  # ------------------------------------------------------------
+  delimiters:
+    # $$ ... $$
+    block_dollar: true
+
+    # $ ... $
+    inline_dollar: true
+
+    # \[ ... \]
+    block_bracket: true
+
+    # \( ... \)
+    inline_parenthesis: true
+
+  # ------------------------------------------------------------
+  # Inline $...$ behavior
+  # ------------------------------------------------------------
+  inline_dollar:
+    # Whether "$ foo $" is allowed.
+    #
+    # false:
+    #   $foo$       -> math
+    #   $ foo $     -> text
+    #
+    # true:
+    #   $ foo $     -> math
+    allow_space: false
+
+    # Whether a single-line "$...$" expression may contain
+    # another "$" escaped as "\$".
+    #
+    # Usually leave this enabled.
+    allow_escaped_dollar: true
+
+  # ------------------------------------------------------------
+  # KaTeX rendering options
+  # ------------------------------------------------------------
+  render:
+    # If false, invalid KaTeX is rendered as red/error text
+    # instead of aborting the Hexo build.
+    throw_on_error: false
+
+    # KaTeX error color.
+    error_color: "#cc0000"
+
+    # KaTeX strict mode.
+    #
+    # false:
+    #   do not report strict-mode warnings
+    #
+    # "warn":
+    #   report warnings
+    #
+    # "ignore":
+    #   ignore strict-mode issues
+    strict: false
+
+    # Allow commands such as \href / \url / \includegraphics
+    # that KaTeX considers potentially unsafe.
+    #
+    # false is recommended unless you trust all Markdown content.
+    trust: false
+
+    # KaTeX output mode:
+    #
+    # html
+    # mathml
+    # htmlAndMathml
+    output: "htmlAndMathml"
+
+    # Display equations aligned to the left.
+    fleqn: false
+
+    # Put equation numbers on the left.
+    leqno: false
+
+    # Whether \color changes text color.
+    color_is_text_color: false
+
+    # Maximum user-specified size in em.
+    max_size: "Infinity"
+
+    # Maximum macro expansion depth.
+    max_expand: 1000
+
+    # Allow macros to affect the global group.
+    global_group: false
+
+    # Minimum thickness of \rule-like elements.
+    min_rule_thickness: 0
+
+    # ----------------------------------------------------------
+    # Custom macros
+    # ----------------------------------------------------------
+    #
+    # Example:
+    #
+    # macros:
+    #   "\\R": "\\mathbb{R}"
+    #   "\\N": "\\mathbb{N}"
+    #   "\\C": "\\mathbb{C}"
+    #   "\\vect": "\\mathbf{#1}"
+    #
+    # Then:
+    #
+    # $x \in \R$
+    #
+    macros:
+      "\\R": "\\mathbb{R}"
+      "\\N": "\\mathbb{N}"
+      "\\C": "\\mathbb{C}"
 
 # Image (圖片設置)
 # --------------------------------------
@@ -215,7 +334,7 @@ anchor: false
 toc:
   post: true
   page: true
-  number: true
+  number: false
   expand: true
   style_simple: true # for post
 
@@ -654,7 +773,7 @@ display_mode: light
 beautify:
   enable: true
   field: site # site/post
-  title-prefix-icon: # '\f0c1'
+  title-prefix-icon: '>' # '\f0c1'
   title-prefix-icon-color: # '#F47466'
 
 # Global font settings
@@ -662,8 +781,8 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family:
-  code-font-family:
+  font-family: "'JetBrains Mono Nerd Font Mono', 'Source Han Sans CN', monospace"
+  code-font-family: "'JetBrains Mono Nerd Font Mono', 'Source Han Sans CN', monospace"
 
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
@@ -674,7 +793,7 @@ blog_title_font:
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:
   enable: true
-  icon: # the unicode value of Font Awesome icon, such as '\3423'
+  icon: '->' # the unicode value of Font Awesome icon, such as '\3423'
   icon-top:
 
 # the subtitle on homepage (主頁subtitle)
@@ -1011,3 +1130,15 @@ CDN:
     # prismjs_autoloader:
     # artalk_js:
     # artalk_css:
+
+# Custom scripts (主题自带脚本的配置)
+# see scripts/
+# --------------------------------------
+
+# Daily Recommend (每日推荐)
+# see scripts/filters/daily_recommend.js
+daily_recommend:
+  # 预取的最大篇数，前端下拉框最多可选到这个数量
+  max_count: 10
+  # 前端默认展示的篇数
+  default_count: 3
