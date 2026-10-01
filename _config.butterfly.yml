@@ -59,7 +59,7 @@ algolia:
 
 # Algolia search
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 6
   labels:
@@ -90,7 +90,7 @@ search:
 
 # MathJax
 mathjax:
-  enable: false
+  enable: true
   per_page: false
 
 # KaTeX parser
@@ -279,7 +279,7 @@ error_img:
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true
   subtitle: "Page Not Found"
   background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
@@ -339,7 +339,7 @@ toc:
   style_simple: true # for post
 
 post_copyright:
-  enable: false
+  enable: true
   decode: false
   author_href:
   license: CC BY-NC-SA 4.0
@@ -347,7 +347,7 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   QR_code:
     # - img: /img/wechat.jpg
     #   link:
@@ -366,7 +366,7 @@ post_edit:
 
 # Related Articles
 related_post:
-  enable: false
+  enable: true
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
@@ -404,7 +404,7 @@ post_pagination: 1
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
-  enable: false
+  enable: true
   style: flat # style: simple/flat
   limit_day: 500 # When will it be shown
   position: top # position: top/bottom
@@ -417,7 +417,7 @@ noticeOutdate:
 # AddThis
 # https://www.addthis.com/
 addThis:
-  enable: false
+  enable: true
   pubid:
 
 # Share.js
@@ -429,7 +429,7 @@ sharejs:
 # AddToAny
 # https://www.addtoany.com/
 addtoany:
-  enable: false
+  enable: true
   item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
 
 # Comments System
@@ -569,31 +569,31 @@ chatra:
 # tidio
 # https://www.tidio.com/
 tidio:
-  enable: false
+  enable: true
   public_key:
 
 # daovoice
 # http://daovoice.io/
 daovoice:
-  enable: false
+  enable: true
   app_id:
 
 # gitter
 # https://gitter.im/
 gitter:
-  enable: false
+  enable: true
   room:
 
 # crisp
 # https://crisp.chat/en/
 crisp:
-  enable: false
+  enable: true
   website_id:
 
 # messenger
 # https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/
 messenger:
-  enable: false
+  enable: true
   pageID:
   lang: zh_TW # Language en_US/zh_CN/zh_TW and so on
 
@@ -634,7 +634,7 @@ microsoft_clarity:
 
 # Google Adsense (谷歌廣告)
 google_adsense:
-  enable: false
+  enable: true
   auto_ads: true
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client:
@@ -712,7 +712,7 @@ enter_transitions: true
 # canvas_ribbon (靜止彩帶背景)
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
-  enable: false
+  enable: true
   size: 150
   alpha: 0.6
   zIndex: -1
@@ -721,13 +721,13 @@ canvas_ribbon:
 
 # Fluttering Ribbon (動態彩帶)
 canvas_fluttering_ribbon:
-  enable: false
+  enable: true
   mobile: false
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   color: "0,0,255" #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
@@ -737,26 +737,26 @@ canvas_nest:
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true # open particle animation (冒光特效)
   shake: true #  open shake (抖動特效)
   mobile: false
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999 # -1 or 9999
   size: 1
   mobile: false
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
 click_heart:
-  enable: false
+  enable: true
   mobile: true
 
 # Mouse click effects: words (鼠標點擊效果: 文字)
 ClickShowText:
-  enable: false
+  enable: true
   text:
     # - I
     # - LOVE
@@ -882,12 +882,12 @@ busuanzi:
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
-  enable: false
+  enable: true
   publish_date:
 
 # Aside widget - Newest Comments
 newest_comments:
-  enable: false
+  enable: true
   sort_order: # Don't modify the setting unless you know how it works
   limit: 6
   storage: 10 # unit: mins, save data to localStorage
@@ -930,7 +930,7 @@ darkmode:
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
 # Don't repeat 不要重複
 rightside_item_order:
-  enable: false
+  enable: true
   hide: # readmode,translate,darkmode,hideAside
   show: # toc,chat,comment
 
@@ -952,7 +952,7 @@ fancybox: true
 # mermaid
 # see https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
+  enable: true
   # built-in themes: default/forest/dark/neutral
   theme:
     light: default
@@ -1138,6 +1138,8 @@ CDN:
 # Daily Recommend (每日推荐)
 # see scripts/filters/daily_recommend.js
 daily_recommend:
+  # 总开关。false: 不抽取推荐、不读写数据文件，layout 为 daily 的页面也不生成
+  enable: false
   # 预取的最大篇数，前端下拉框最多可选到这个数量
   max_count: 10
   # 前端默认展示的篇数
