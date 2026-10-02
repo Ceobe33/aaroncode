@@ -758,9 +758,9 @@ click_heart:
 ClickShowText:
   enable: true
   text:
-    # - I
-    # - LOVE
-    # - YOU
+    - Hello
+    - Nice
+    - Cool
   fontSize: 15px
   random: false
   mobile: false

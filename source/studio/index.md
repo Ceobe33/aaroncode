@@ -36,5 +36,4 @@ permalink: /studio/
 与图集图片）。文件只在浏览器里读取，不会上传；导出的 GIF 直接下载到本地。
 需要 WebGL 2，2017 年之后的主流浏览器都支持。
 
-{% post_link spine-studio/index %}
-[在新窗口打开 →](../spine-studio/)
+[在新窗口打开 →](/spine-studio/)
