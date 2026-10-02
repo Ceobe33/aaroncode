@@ -14,7 +14,7 @@ email: youareaaron0@gmail.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://ceobe33.github.io/project
+url: https://ceobe33.github.io
 root: /
 # 如果末尾没有 ‘/’ 就会有点击博客文章变成下载的bug
 permalink: posts/:title/
@@ -41,6 +41,9 @@ skip_render:
   # 文件开头 —— 整页会在 <!DOCTYPE html> 之前（浏览器退化为怪异模式），
   # .js 则直接变成非法语法，模块导不出启动函数。
   - spine-studio/*
+  # 同理：vendored 的第三方库必须原样落盘。渲染管线（nunjucks）会把
+  # instantsearch 之类压缩过的 .js 当成模板，遇到 "#" 直接报错构建失败。
+  - pluginsSrc/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -121,6 +124,14 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: butterfly
+
+# hexo-math 默认从 cdn.jsdelivr.net 注入 KaTeX 样式，这里改成本地副本
+# （文件由 tools/vendor-plugins.py 落到 source/pluginsSrc/）
+math:
+  katex:
+    css: /pluginsSrc/katex/dist/katex.min.css
+  mathjax:
+    css: /pluginsSrc/hexo-math/dist/style.css
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
